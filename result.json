@@ -1,0 +1,4780 @@
+{
+  "tool": "solution",
+  "input": "D:\\my-workspace\\ai-workspace\\zhongqiang\\CC_Codex 用户反馈标注(领域专项)项目\\准备配置\\并行作答_20261117\\重跑\\20261120\\12729\\retry-1\\本次作答\\作答工作区_uid12729-20261120-053547-claude-r2\\cases.json",
+  "scenario_count": 8,
+  "receipt_count": 68,
+  "results": [
+    {
+      "scenario": "merge_split_remerge_generations",
+      "description": "合并、桥接撤回拆分、重新合并的主体代数单调演进与会话失效",
+      "receipts": [
+        {
+          "request_id": "tA-r00",
+          "tenant": "tA",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tA"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tA-reg-i1",
+          "tenant": "tA",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tA-reg-i2",
+          "tenant": "tA",
+          "op": "register_identity",
+          "tick": 12,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 12,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tA-reg-i3",
+          "tenant": "tA",
+          "op": "register_identity",
+          "tick": 13,
+          "status": "OK",
+          "result": {
+            "identity_id": "i3",
+            "provider": "p3",
+            "identity_gen": 1,
+            "subject_no": "i3"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 13,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tA-reg-i4",
+          "tenant": "tA",
+          "op": "register_identity",
+          "tick": 14,
+          "status": "OK",
+          "result": {
+            "identity_id": "i4",
+            "provider": "p4",
+            "identity_gen": 1,
+            "subject_no": "i4"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 14,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tA-e12",
+          "tenant": "tA",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tA-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 5,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 5,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tA-e23",
+          "tenant": "tA",
+          "op": "associate",
+          "tick": 21,
+          "status": "OK",
+          "result": {
+            "edge_id": "tA-e23",
+            "id_a": "i2",
+            "id_b": "i3",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 5,
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i3",
+                "last_gen": 3
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tA-login-1",
+          "tenant": "tA",
+          "op": "login",
+          "tick": 22,
+          "status": "OK",
+          "result": {
+            "session_id": "tA-login-1",
+            "subject_no": "i1",
+            "subject_gen": 6,
+            "members": [
+              "i1",
+              "i2",
+              "i3"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 22,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tA-login-1",
+                "subject_no": "i1",
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tA-e34",
+          "tenant": "tA",
+          "op": "associate",
+          "tick": 23,
+          "status": "OK",
+          "result": {
+            "edge_id": "tA-e34",
+            "id_a": "i3",
+            "id_b": "i4",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 6,
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i4",
+                "last_gen": 4
+              }
+            ],
+            "invalidated_sessions": [
+              {
+                "session_id": "tA-login-1",
+                "subject_no": "i1",
+                "reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 23,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tA-login-1",
+                "subject_no": "i1",
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tA-rev-e23",
+          "tenant": "tA",
+          "op": "revoke",
+          "tick": 24,
+          "status": "OK",
+          "result": {
+            "edge_id": "tA-e23",
+            "state": "revoked",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 7,
+                "subject_gen": 8,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_created",
+                "subject_no": "i3",
+                "subject_gen": 9,
+                "members": [
+                  "i3",
+                  "i4"
+                ]
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 24,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 8,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 9,
+                "members": [
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tA-login-1",
+                "subject_no": "i1",
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "revoked",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tA-e13",
+          "tenant": "tA",
+          "op": "associate",
+          "tick": 25,
+          "status": "OK",
+          "result": {
+            "edge_id": "tA-e13",
+            "id_a": "i1",
+            "id_b": "i3",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 8,
+                "subject_gen": 10,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i3",
+                "last_gen": 9
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 25,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 10,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tA-login-1",
+                "subject_no": "i1",
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e13",
+                "id_a": "i1",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "revoked",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tA-login-2",
+          "tenant": "tA",
+          "op": "login",
+          "tick": 26,
+          "status": "OK",
+          "result": {
+            "session_id": "tA-login-2",
+            "subject_no": "i1",
+            "subject_gen": 10,
+            "members": [
+              "i1",
+              "i2",
+              "i3",
+              "i4"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 26,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 10,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tA-login-1",
+                "subject_no": "i1",
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              },
+              {
+                "session_id": "tA-login-2",
+                "subject_no": "i1",
+                "subject_gen": 10,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tA-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e13",
+                "id_a": "i1",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "revoked",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tA-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tA": {
+          "clock": 26,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1,
+            "i3": 1,
+            "i4": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 10,
+              "members": [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2",
+              "i3",
+              "i4"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "tA-login-1",
+              "subject_no": "i1",
+              "subject_gen": 6,
+              "members": [
+                "i1",
+                "i2",
+                "i3"
+              ],
+              "valid": false,
+              "invalid_reason": "SUBJECT_GEN_ADVANCED"
+            },
+            {
+              "session_id": "tA-login-2",
+              "subject_no": "i1",
+              "subject_gen": 10,
+              "members": [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ],
+              "valid": true,
+              "invalid_reason": null
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "tA-e12",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tA-e13",
+              "id_a": "i1",
+              "id_b": "i3",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tA-e23",
+              "id_a": "i2",
+              "id_b": "i3",
+              "state": "revoked",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tA-e34",
+              "id_a": "i3",
+              "id_b": "i4",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    },
+    {
+      "scenario": "two_legal_merges_form_provider_conflict",
+      "description": "两条边各自合法但共同形成同提供方冲突，整笔拒绝且无半成品",
+      "receipts": [
+        {
+          "request_id": "tB-r00",
+          "tenant": "tB",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tB"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tB-reg-i1",
+          "tenant": "tB",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tB-reg-i2",
+          "tenant": "tB",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tB-reg-i3",
+          "tenant": "tB",
+          "op": "register_identity",
+          "tick": 12,
+          "status": "OK",
+          "result": {
+            "identity_id": "i3",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i3"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 12,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tB-e12",
+          "tenant": "tB",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tB-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 4,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tB-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tB-e23",
+          "tenant": "tB",
+          "op": "associate",
+          "tick": 21,
+          "status": "PROVIDER_CONFLICT",
+          "result": null,
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tB-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tB-login-i3",
+          "tenant": "tB",
+          "op": "login",
+          "tick": 22,
+          "status": "OK",
+          "result": {
+            "session_id": "tB-login-i3",
+            "subject_no": "i3",
+            "subject_gen": 3,
+            "members": [
+              "i3"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 22,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tB-login-i3",
+                "subject_no": "i3",
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tB-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tB": {
+          "clock": 22,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1,
+            "i3": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 4,
+              "members": [
+                "i1",
+                "i2"
+              ]
+            },
+            "i3": {
+              "subject_gen": 3,
+              "members": [
+                "i3"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2"
+            ],
+            [
+              "i3"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "tB-login-i3",
+              "subject_no": "i3",
+              "subject_gen": 3,
+              "members": [
+                "i3"
+              ],
+              "valid": true,
+              "invalid_reason": null
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "tB-e12",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    },
+    {
+      "scenario": "bridge_revoke_with_alternate_path",
+      "description": "撤回桥接边但备选路径维持连通，二次撤回才真正拆分",
+      "receipts": [
+        {
+          "request_id": "tC-r00",
+          "tenant": "tC",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tC"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tC-reg-i1",
+          "tenant": "tC",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tC-reg-i2",
+          "tenant": "tC",
+          "op": "register_identity",
+          "tick": 12,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 12,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tC-reg-i3",
+          "tenant": "tC",
+          "op": "register_identity",
+          "tick": 13,
+          "status": "OK",
+          "result": {
+            "identity_id": "i3",
+            "provider": "p3",
+            "identity_gen": 1,
+            "subject_no": "i3"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 13,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tC-reg-i4",
+          "tenant": "tC",
+          "op": "register_identity",
+          "tick": 14,
+          "status": "OK",
+          "result": {
+            "identity_id": "i4",
+            "provider": "p4",
+            "identity_gen": 1,
+            "subject_no": "i4"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 14,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tC-e12",
+          "tenant": "tC",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tC-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 5,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 5,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tC-e23",
+          "tenant": "tC",
+          "op": "associate",
+          "tick": 21,
+          "status": "OK",
+          "result": {
+            "edge_id": "tC-e23",
+            "id_a": "i2",
+            "id_b": "i3",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 5,
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i3",
+                "last_gen": 3
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              },
+              "i4": {
+                "subject_gen": 4,
+                "members": [
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3"
+              ],
+              [
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tC-e34",
+          "tenant": "tC",
+          "op": "associate",
+          "tick": 22,
+          "status": "OK",
+          "result": {
+            "edge_id": "tC-e34",
+            "id_a": "i3",
+            "id_b": "i4",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 6,
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i4",
+                "last_gen": 4
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 22,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tC-e41",
+          "tenant": "tC",
+          "op": "associate",
+          "tick": 23,
+          "status": "OK",
+          "result": {
+            "edge_id": "tC-e41",
+            "id_a": "i1",
+            "id_b": "i4",
+            "subject_events": [],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 23,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e41",
+                "id_a": "i1",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tC-login-ring",
+          "tenant": "tC",
+          "op": "login",
+          "tick": 24,
+          "status": "OK",
+          "result": {
+            "session_id": "tC-login-ring",
+            "subject_no": "i1",
+            "subject_gen": 7,
+            "members": [
+              "i1",
+              "i2",
+              "i3",
+              "i4"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 24,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tC-login-ring",
+                "subject_no": "i1",
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e41",
+                "id_a": "i1",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tC-rev-e23",
+          "tenant": "tC",
+          "op": "revoke",
+          "tick": 25,
+          "status": "OK",
+          "result": {
+            "edge_id": "tC-e23",
+            "state": "revoked",
+            "subject_events": [],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 25,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tC-login-ring",
+                "subject_no": "i1",
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "revoked",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e41",
+                "id_a": "i1",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tC-rev-e41",
+          "tenant": "tC",
+          "op": "revoke",
+          "tick": 26,
+          "status": "OK",
+          "result": {
+            "edge_id": "tC-e41",
+            "state": "revoked",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 7,
+                "subject_gen": 8,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_created",
+                "subject_no": "i3",
+                "subject_gen": 9,
+                "members": [
+                  "i3",
+                  "i4"
+                ]
+              }
+            ],
+            "invalidated_sessions": [
+              {
+                "session_id": "tC-login-ring",
+                "subject_no": "i1",
+                "reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 26,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1,
+              "i4": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 8,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 9,
+                "members": [
+                  "i3",
+                  "i4"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3",
+                "i4"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tC-login-ring",
+                "subject_no": "i1",
+                "subject_gen": 7,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3",
+                  "i4"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tC-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e23",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "revoked",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e34",
+                "id_a": "i3",
+                "id_b": "i4",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tC-e41",
+                "id_a": "i1",
+                "id_b": "i4",
+                "state": "revoked",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tC": {
+          "clock": 26,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1,
+            "i3": 1,
+            "i4": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 8,
+              "members": [
+                "i1",
+                "i2"
+              ]
+            },
+            "i3": {
+              "subject_gen": 9,
+              "members": [
+                "i3",
+                "i4"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2"
+            ],
+            [
+              "i3",
+              "i4"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "tC-login-ring",
+              "subject_no": "i1",
+              "subject_gen": 7,
+              "members": [
+                "i1",
+                "i2",
+                "i3",
+                "i4"
+              ],
+              "valid": false,
+              "invalid_reason": "SUBJECT_GEN_ADVANCED"
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "tC-e12",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tC-e23",
+              "id_a": "i2",
+              "id_b": "i3",
+              "state": "revoked",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tC-e34",
+              "id_a": "i3",
+              "id_b": "i4",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tC-e41",
+              "id_a": "i1",
+              "id_b": "i4",
+              "state": "revoked",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    },
+    {
+      "scenario": "reissue_and_renewal_generation_chain",
+      "description": "身份续发使旧确认失效、边转 stale，按当代数重新确认后续期",
+      "receipts": [
+        {
+          "request_id": "tD-r00",
+          "tenant": "tD",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tD"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tD-reg-i1",
+          "tenant": "tD",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tD-reg-i2",
+          "tenant": "tD",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tD-e12",
+          "tenant": "tD",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tD-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tD-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 100
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tD-login-1",
+          "tenant": "tD",
+          "op": "login",
+          "tick": 21,
+          "status": "OK",
+          "result": {
+            "session_id": "tD-login-1",
+            "subject_no": "i1",
+            "subject_gen": 3,
+            "members": [
+              "i1",
+              "i2"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tD-login-1",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tD-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 100
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tD-reissue-i1",
+          "tenant": "tD",
+          "op": "reissue",
+          "tick": 22,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "identity_gen": 2,
+            "edges_marked_stale": 1,
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 3,
+                "subject_gen": 4,
+                "members": [
+                  "i1"
+                ]
+              },
+              {
+                "event": "subject_created",
+                "subject_no": "i2",
+                "subject_gen": 5,
+                "members": [
+                  "i2"
+                ]
+              }
+            ],
+            "invalidated_sessions": [
+              {
+                "session_id": "tD-login-1",
+                "subject_no": "i1",
+                "reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 22,
+            "identity_gens": {
+              "i1": 2,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 5,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tD-login-1",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tD-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "stale",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 100
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tD-renew-bad",
+          "tenant": "tD",
+          "op": "renew_edge",
+          "tick": 23,
+          "status": "STALE_CONFIRMATION",
+          "result": null,
+          "replayed": false,
+          "snapshot": {
+            "clock": 23,
+            "identity_gens": {
+              "i1": 2,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 5,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tD-login-1",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tD-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "stale",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 100
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tD-renew-ok",
+          "tenant": "tD",
+          "op": "renew_edge",
+          "tick": 24,
+          "status": "OK",
+          "result": {
+            "edge_id": "tD-renew-ok",
+            "renewed_from": "tD-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 4,
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 5
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 24,
+            "identity_gens": {
+              "i1": 2,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tD-login-1",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tD-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "stale",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 100
+              },
+              {
+                "edge_id": "tD-renew-ok",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 2,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tD-login-2",
+          "tenant": "tD",
+          "op": "login",
+          "tick": 25,
+          "status": "OK",
+          "result": {
+            "session_id": "tD-login-2",
+            "subject_no": "i1",
+            "subject_gen": 6,
+            "members": [
+              "i1",
+              "i2"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 25,
+            "identity_gens": {
+              "i1": 2,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tD-login-1",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              },
+              {
+                "session_id": "tD-login-2",
+                "subject_no": "i1",
+                "subject_gen": 6,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tD-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "stale",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 100
+              },
+              {
+                "edge_id": "tD-renew-ok",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 2,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tD": {
+          "clock": 25,
+          "identity_gens": {
+            "i1": 2,
+            "i2": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 6,
+              "members": [
+                "i1",
+                "i2"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "tD-login-1",
+              "subject_no": "i1",
+              "subject_gen": 3,
+              "members": [
+                "i1",
+                "i2"
+              ],
+              "valid": false,
+              "invalid_reason": "SUBJECT_GEN_ADVANCED"
+            },
+            {
+              "session_id": "tD-login-2",
+              "subject_no": "i1",
+              "subject_gen": 6,
+              "members": [
+                "i1",
+                "i2"
+              ],
+              "valid": true,
+              "invalid_reason": null
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "tD-e12",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "stale",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 100
+            },
+            {
+              "edge_id": "tD-renew-ok",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 2,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    },
+    {
+      "scenario": "expiry_races_new_session_and_replay",
+      "description": "边到期导致分量拆分，新旧登录争用，旧请求只重放历史回执",
+      "receipts": [
+        {
+          "request_id": "tE-r00",
+          "tenant": "tE",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tE"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tE-reg-i1",
+          "tenant": "tE",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tE-reg-i2",
+          "tenant": "tE",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tE-e12",
+          "tenant": "tE",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tE-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tE-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 10,
+                "not_after": 30
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tE-login-before",
+          "tenant": "tE",
+          "op": "login",
+          "tick": 25,
+          "status": "OK",
+          "result": {
+            "session_id": "tE-login-before",
+            "subject_no": "i1",
+            "subject_gen": 3,
+            "members": [
+              "i1",
+              "i2"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 25,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tE-login-before",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tE-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 10,
+                "not_after": 30
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tE-login-after",
+          "tenant": "tE",
+          "op": "login",
+          "tick": 31,
+          "status": "OK",
+          "result": {
+            "session_id": "tE-login-after",
+            "subject_no": "i2",
+            "subject_gen": 5,
+            "members": [
+              "i2"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 31,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 5,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tE-login-after",
+                "subject_no": "i2",
+                "subject_gen": 5,
+                "members": [
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              },
+              {
+                "session_id": "tE-login-before",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": false,
+                "invalid_reason": "SUBJECT_GEN_ADVANCED"
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tE-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 10,
+                "not_after": 30
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tE-e12",
+          "tenant": "tE",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tE-e12",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": true,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tE-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 10,
+                "not_after": 30
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tE-login-before",
+          "tenant": "tE",
+          "op": "login",
+          "tick": 25,
+          "status": "OK",
+          "result": {
+            "session_id": "tE-login-before",
+            "subject_no": "i1",
+            "subject_gen": 3,
+            "members": [
+              "i1",
+              "i2"
+            ]
+          },
+          "replayed": true,
+          "snapshot": {
+            "clock": 25,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "tE-login-before",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "tE-e12",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 10,
+                "not_after": 30
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tE": {
+          "clock": 31,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 4,
+              "members": [
+                "i1"
+              ]
+            },
+            "i2": {
+              "subject_gen": 5,
+              "members": [
+                "i2"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1"
+            ],
+            [
+              "i2"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "tE-login-after",
+              "subject_no": "i2",
+              "subject_gen": 5,
+              "members": [
+                "i2"
+              ],
+              "valid": true,
+              "invalid_reason": null
+            },
+            {
+              "session_id": "tE-login-before",
+              "subject_no": "i1",
+              "subject_gen": 3,
+              "members": [
+                "i1",
+                "i2"
+              ],
+              "valid": false,
+              "invalid_reason": "SUBJECT_GEN_ADVANCED"
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "tE-e12",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 10,
+              "not_after": 30
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    },
+    {
+      "scenario": "process_crash_before_and_after_commit",
+      "description": "独立进程在未提交与已提交未回执两处终止，重启按 ID 重放",
+      "receipts": [
+        {
+          "request_id": "tF-r00",
+          "tenant": "tF",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tF"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tF-reg-i1",
+          "tenant": "tF",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tF-reg-i2",
+          "tenant": "tF",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tF-reg-i3",
+          "tenant": "tF",
+          "op": "register_identity",
+          "tick": 12,
+          "status": "OK",
+          "result": {
+            "identity_id": "i3",
+            "provider": "p3",
+            "identity_gen": 1,
+            "subject_no": "i3"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 12,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tF-e12-bc",
+          "tenant": "tF",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "tF-e12-bc",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 4,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 4,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tF-e12-bc",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tF-e23-ac",
+          "tenant": "tF",
+          "op": "associate",
+          "tick": 21,
+          "status": "OK",
+          "result": {
+            "edge_id": "tF-e23-ac",
+            "id_a": "i2",
+            "id_b": "i3",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 4,
+                "subject_gen": 5,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i3",
+                "last_gen": 3
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 5,
+                "members": [
+                  "i1",
+                  "i2",
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2",
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "tF-e12-bc",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              },
+              {
+                "edge_id": "tF-e23-ac",
+                "id_a": "i2",
+                "id_b": "i3",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tF": {
+          "clock": 21,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1,
+            "i3": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 5,
+              "members": [
+                "i1",
+                "i2",
+                "i3"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2",
+              "i3"
+            ]
+          ],
+          "sessions": [],
+          "edges": [
+            {
+              "edge_id": "tF-e12-bc",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            },
+            {
+              "edge_id": "tF-e23-ac",
+              "id_a": "i2",
+              "id_b": "i3",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": [
+        {
+          "request_id": "tF-e12-bc",
+          "crash": "before_commit"
+        },
+        {
+          "request_id": "tF-e23-ac",
+          "crash": "after_commit"
+        }
+      ]
+    },
+    {
+      "scenario": "concurrent_associate_reissue_revoke",
+      "description": "确认、续发、撤回在独立进程中并发争用同一批边",
+      "receipts": [
+        {
+          "request_id": "tG-r00",
+          "tenant": "tG",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tG"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tG-reg-i1",
+          "tenant": "tG",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tG-reg-i2",
+          "tenant": "tG",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tG-reg-i3",
+          "tenant": "tG",
+          "op": "register_identity",
+          "tick": 12,
+          "status": "OK",
+          "result": {
+            "identity_id": "i3",
+            "provider": "p3",
+            "identity_gen": 1,
+            "subject_no": "i3"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 12,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1,
+              "i3": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              },
+              "i3": {
+                "subject_gen": 3,
+                "members": [
+                  "i3"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ],
+              [
+                "i3"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tG": {
+          "clock": 12,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1,
+            "i3": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 1,
+              "members": [
+                "i1"
+              ]
+            },
+            "i2": {
+              "subject_gen": 2,
+              "members": [
+                "i2"
+              ]
+            },
+            "i3": {
+              "subject_gen": 3,
+              "members": [
+                "i3"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1"
+            ],
+            [
+              "i2"
+            ],
+            [
+              "i3"
+            ]
+          ],
+          "sessions": [],
+          "edges": []
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    },
+    {
+      "scenario": "tenant_isolation_same_numbers",
+      "description": "不同租户同身份编号、同请求编号、同主体编号互不干扰",
+      "receipts": [
+        {
+          "request_id": "tX-r00",
+          "tenant": "tX",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tX"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tX-reg-i1",
+          "tenant": "tX",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tX-reg-i2",
+          "tenant": "tX",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "shared-rid-edge",
+          "tenant": "tX",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "shared-rid-edge",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "shared-rid-edge",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "shared-rid-login",
+          "tenant": "tX",
+          "op": "login",
+          "tick": 21,
+          "status": "OK",
+          "result": {
+            "session_id": "shared-rid-login",
+            "subject_no": "i1",
+            "subject_gen": 3,
+            "members": [
+              "i1",
+              "i2"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "shared-rid-login",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "shared-rid-edge",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "tY-r00",
+          "tenant": "tY",
+          "op": "register_tenant",
+          "tick": 1,
+          "status": "OK",
+          "result": {
+            "tenant": "tY"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 1,
+            "identity_gens": {},
+            "subjects": {},
+            "components": [],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tY-reg-i1",
+          "tenant": "tY",
+          "op": "register_identity",
+          "tick": 10,
+          "status": "OK",
+          "result": {
+            "identity_id": "i1",
+            "provider": "p1",
+            "identity_gen": 1,
+            "subject_no": "i1"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 10,
+            "identity_gens": {
+              "i1": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "tY-reg-i2",
+          "tenant": "tY",
+          "op": "register_identity",
+          "tick": 11,
+          "status": "OK",
+          "result": {
+            "identity_id": "i2",
+            "provider": "p2",
+            "identity_gen": 1,
+            "subject_no": "i2"
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 11,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 1,
+                "members": [
+                  "i1"
+                ]
+              },
+              "i2": {
+                "subject_gen": 2,
+                "members": [
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1"
+              ],
+              [
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": []
+          }
+        },
+        {
+          "request_id": "shared-rid-edge",
+          "tenant": "tY",
+          "op": "associate",
+          "tick": 20,
+          "status": "OK",
+          "result": {
+            "edge_id": "shared-rid-edge",
+            "id_a": "i1",
+            "id_b": "i2",
+            "subject_events": [
+              {
+                "event": "subject_gen_advanced",
+                "subject_no": "i1",
+                "old_gen": 1,
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              },
+              {
+                "event": "subject_number_retired",
+                "subject_no": "i2",
+                "last_gen": 2
+              }
+            ],
+            "invalidated_sessions": []
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 20,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [],
+            "edges": [
+              {
+                "edge_id": "shared-rid-edge",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        },
+        {
+          "request_id": "shared-rid-login",
+          "tenant": "tY",
+          "op": "login",
+          "tick": 21,
+          "status": "OK",
+          "result": {
+            "session_id": "shared-rid-login",
+            "subject_no": "i1",
+            "subject_gen": 3,
+            "members": [
+              "i1",
+              "i2"
+            ]
+          },
+          "replayed": false,
+          "snapshot": {
+            "clock": 21,
+            "identity_gens": {
+              "i1": 1,
+              "i2": 1
+            },
+            "subjects": {
+              "i1": {
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ]
+              }
+            },
+            "components": [
+              [
+                "i1",
+                "i2"
+              ]
+            ],
+            "sessions": [
+              {
+                "session_id": "shared-rid-login",
+                "subject_no": "i1",
+                "subject_gen": 3,
+                "members": [
+                  "i1",
+                  "i2"
+                ],
+                "valid": true,
+                "invalid_reason": null
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "shared-rid-edge",
+                "id_a": "i1",
+                "id_b": "i2",
+                "state": "active",
+                "gen_a": 1,
+                "gen_b": 1,
+                "not_before": 1,
+                "not_after": 1000
+              }
+            ]
+          }
+        }
+      ],
+      "final_snapshots": {
+        "tX": {
+          "clock": 21,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 3,
+              "members": [
+                "i1",
+                "i2"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "shared-rid-login",
+              "subject_no": "i1",
+              "subject_gen": 3,
+              "members": [
+                "i1",
+                "i2"
+              ],
+              "valid": true,
+              "invalid_reason": null
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "shared-rid-edge",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        },
+        "tY": {
+          "clock": 21,
+          "identity_gens": {
+            "i1": 1,
+            "i2": 1
+          },
+          "subjects": {
+            "i1": {
+              "subject_gen": 3,
+              "members": [
+                "i1",
+                "i2"
+              ]
+            }
+          },
+          "components": [
+            [
+              "i1",
+              "i2"
+            ]
+          ],
+          "sessions": [
+            {
+              "session_id": "shared-rid-login",
+              "subject_no": "i1",
+              "subject_gen": 3,
+              "members": [
+                "i1",
+                "i2"
+              ],
+              "valid": true,
+              "invalid_reason": null
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "shared-rid-edge",
+              "id_a": "i1",
+              "id_b": "i2",
+              "state": "active",
+              "gen_a": 1,
+              "gen_b": 1,
+              "not_before": 1,
+              "not_after": 1000
+            }
+          ]
+        }
+      },
+      "crash_injections_stripped_in_process": []
+    }
+  ]
+}

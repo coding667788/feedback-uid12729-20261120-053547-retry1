@@ -1,3 +1,7 @@
 .runtime-tmp/
 __pycache__/
 *.py[cod]
+fed-db/
+*.db
+*.db-wal
+*.db-shm

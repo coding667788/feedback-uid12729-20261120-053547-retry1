@@ -1,0 +1,1307 @@
+{
+  "schema_version": 1,
+  "description": "本地联邦身份目录离线合成输入；时间为租户内单调逻辑时钟",
+  "scenarios": [
+    {
+      "id": "S1",
+      "name": "merge_split_remerge_generations",
+      "description": "合并、桥接撤回拆分、重新合并的主体代数单调演进与会话失效",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tA",
+          "request_id": "tA-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tA",
+          "request_id": "tA-reg-i1",
+          "tick": 11,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tA",
+          "request_id": "tA-reg-i2",
+          "tick": 12,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tA",
+          "request_id": "tA-reg-i3",
+          "tick": 13,
+          "identity_id": "i3",
+          "provider": "p3"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tA",
+          "request_id": "tA-reg-i4",
+          "tick": 14,
+          "identity_id": "i4",
+          "provider": "p4"
+        },
+        {
+          "op": "associate",
+          "tenant": "tA",
+          "request_id": "tA-e12",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tA",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tA-e12",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "1335301714b3978a57c99c6cb529e8b4a43d60426faefb90342a6e25c0844d2f"
+            },
+            {
+              "tenant": "tA",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tA-e12",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "66fb01886d4a47330f5035857da959e53049bbe53b625b542d8625c1fb76759f"
+            }
+          ]
+        },
+        {
+          "op": "associate",
+          "tenant": "tA",
+          "request_id": "tA-e23",
+          "tick": 21,
+          "identity_a": "i2",
+          "identity_b": "i3",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tA",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tA-e23",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "4bc7635563098298256c47a3e714cfc0aa54abf5530aca5f0d330ed32969efc5"
+            },
+            {
+              "tenant": "tA",
+              "provider": "p3",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tA-e23",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "c6687872afb78c496e23e0cc5ef6d71ec31baf28c4777c30df080fc497df4ed2"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tA",
+          "request_id": "tA-login-1",
+          "tick": 22,
+          "identity_id": "i2"
+        },
+        {
+          "op": "associate",
+          "tenant": "tA",
+          "request_id": "tA-e34",
+          "tick": 23,
+          "identity_a": "i3",
+          "identity_b": "i4",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tA",
+              "provider": "p3",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i4",
+              "request_id": "tA-e34",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "efbb41d0a8df05f508a176bbed859eb0425f0e0b2e98e35a8b7b7e4dd9ecc625"
+            },
+            {
+              "tenant": "tA",
+              "provider": "p4",
+              "identity": "i4",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tA-e34",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "1fd165350906ba463fa8ef08e43bdcbe8365f516b9558440d5eec912d235138d"
+            }
+          ]
+        },
+        {
+          "op": "revoke",
+          "tenant": "tA",
+          "request_id": "tA-rev-e23",
+          "tick": 24,
+          "edge_id": "tA-e23"
+        },
+        {
+          "op": "associate",
+          "tenant": "tA",
+          "request_id": "tA-e13",
+          "tick": 25,
+          "identity_a": "i1",
+          "identity_b": "i3",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tA",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tA-e13",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "fc4ca4342c6611ce439b0a85c8b3e6d58e4fef49d0d8537b3216f6162ce4f610"
+            },
+            {
+              "tenant": "tA",
+              "provider": "p3",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tA-e13",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "69c73ecf46a38f62c67828ff8dc4134b21ee90e2e47c04ad4633845e88b04a30"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tA",
+          "request_id": "tA-login-2",
+          "tick": 26,
+          "identity_id": "i4"
+        }
+      ],
+      "expected": {
+        "final_components": [
+          [
+            "i1",
+            "i2",
+            "i3",
+            "i4"
+          ]
+        ],
+        "final_subject_no": "i1",
+        "login1_valid_after_revoke": false,
+        "login1_invalid_reason": "SUBJECT_GEN_ADVANCED",
+        "login2_valid": true,
+        "rejected_statuses": {}
+      }
+    },
+    {
+      "id": "S2",
+      "name": "two_legal_merges_form_provider_conflict",
+      "description": "两条边各自合法但共同形成同提供方冲突，整笔拒绝且无半成品",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tB",
+          "request_id": "tB-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tB",
+          "request_id": "tB-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tB",
+          "request_id": "tB-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tB",
+          "request_id": "tB-reg-i3",
+          "tick": 12,
+          "identity_id": "i3",
+          "provider": "p1"
+        },
+        {
+          "op": "associate",
+          "tenant": "tB",
+          "request_id": "tB-e12",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tB",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tB-e12",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "d34a741fe437c8c6a20478e373ebf30f8547f8d655e2c58898f4cea69251c8e7"
+            },
+            {
+              "tenant": "tB",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tB-e12",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "f7b4c8584becbb65cea4beebefaccc9b9172904d09e861284b7d1100b7a2adc6"
+            }
+          ]
+        },
+        {
+          "op": "associate",
+          "tenant": "tB",
+          "request_id": "tB-e23",
+          "tick": 21,
+          "identity_a": "i2",
+          "identity_b": "i3",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tB",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tB-e23",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "c9908040817a3de9a6b2b629caa07388ae23284d923221e7412802d7617b3e67"
+            },
+            {
+              "tenant": "tB",
+              "provider": "p1",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tB-e23",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "6c57d8a2e058fe691c8b6e93abf9771559ee7ed1439637b75368eba7b9c71f38"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tB",
+          "request_id": "tB-login-i3",
+          "tick": 22,
+          "identity_id": "i3"
+        }
+      ],
+      "expected": {
+        "conflict_request": "tB-e23",
+        "conflict_status": "PROVIDER_CONFLICT",
+        "components_after": [
+          [
+            "i1",
+            "i2"
+          ],
+          [
+            "i3"
+          ]
+        ],
+        "subject_count": 2,
+        "rejected_edge_absent": "tB-e23",
+        "login_i3_subject_no": "i3"
+      }
+    },
+    {
+      "id": "S3",
+      "name": "bridge_revoke_with_alternate_path",
+      "description": "撤回桥接边但备选路径维持连通，二次撤回才真正拆分",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tC",
+          "request_id": "tC-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tC",
+          "request_id": "tC-reg-i1",
+          "tick": 11,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tC",
+          "request_id": "tC-reg-i2",
+          "tick": 12,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tC",
+          "request_id": "tC-reg-i3",
+          "tick": 13,
+          "identity_id": "i3",
+          "provider": "p3"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tC",
+          "request_id": "tC-reg-i4",
+          "tick": 14,
+          "identity_id": "i4",
+          "provider": "p4"
+        },
+        {
+          "op": "associate",
+          "tenant": "tC",
+          "request_id": "tC-e12",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tC",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tC-e12",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "ec9f70ac6770a2d5567108c07622861a863fb2d4c9a377cd5ddce8a9832e8052"
+            },
+            {
+              "tenant": "tC",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tC-e12",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "94e81c9b2aab624ea99d8f51ae8af7ec54184ba40c8bce70617f8d6e10725933"
+            }
+          ]
+        },
+        {
+          "op": "associate",
+          "tenant": "tC",
+          "request_id": "tC-e23",
+          "tick": 21,
+          "identity_a": "i2",
+          "identity_b": "i3",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tC",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tC-e23",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "c53c0166a86e7f95a4f793e34d5ad855894b2ae951da0664d364632e164caa5b"
+            },
+            {
+              "tenant": "tC",
+              "provider": "p3",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tC-e23",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "ced72e523ec4d4ccec3e08fab3fccb4769f953db9275aeaf81e3010bdce9b54c"
+            }
+          ]
+        },
+        {
+          "op": "associate",
+          "tenant": "tC",
+          "request_id": "tC-e34",
+          "tick": 22,
+          "identity_a": "i3",
+          "identity_b": "i4",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tC",
+              "provider": "p3",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i4",
+              "request_id": "tC-e34",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "5460901ce8bcdcee684ce4ee23a17923ba70a6ca964eea2d8c3134c609aed6ee"
+            },
+            {
+              "tenant": "tC",
+              "provider": "p4",
+              "identity": "i4",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tC-e34",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "0aed6533dc86c061c1fedb09b60bbee6d291868a48be1505568f4567a50540a7"
+            }
+          ]
+        },
+        {
+          "op": "associate",
+          "tenant": "tC",
+          "request_id": "tC-e41",
+          "tick": 23,
+          "identity_a": "i4",
+          "identity_b": "i1",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tC",
+              "provider": "p4",
+              "identity": "i4",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tC-e41",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "681133ae5d0a9b79c95d5be0b5198fce6239367359ce6226b4b421a5a30adff0"
+            },
+            {
+              "tenant": "tC",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i4",
+              "request_id": "tC-e41",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "910f4a1127597b96b3416ee7c9ad302e6160eabb4fcbf5231a002a4a34b172f6"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tC",
+          "request_id": "tC-login-ring",
+          "tick": 24,
+          "identity_id": "i1"
+        },
+        {
+          "op": "revoke",
+          "tenant": "tC",
+          "request_id": "tC-rev-e23",
+          "tick": 25,
+          "edge_id": "tC-e23"
+        },
+        {
+          "op": "revoke",
+          "tenant": "tC",
+          "request_id": "tC-rev-e41",
+          "tick": 26,
+          "edge_id": "tC-e41"
+        }
+      ],
+      "expected": {
+        "components_after_first_revoke": [
+          [
+            "i1",
+            "i2",
+            "i3",
+            "i4"
+          ]
+        ],
+        "ring_login_valid_after_first_revoke": true,
+        "components_after_second_revoke": [
+          [
+            "i1",
+            "i2"
+          ],
+          [
+            "i3",
+            "i4"
+          ]
+        ],
+        "ring_login_valid_after_second_revoke": false
+      }
+    },
+    {
+      "id": "S4",
+      "name": "reissue_and_renewal_generation_chain",
+      "description": "身份续发使旧确认失效、边转 stale，按当代数重新确认后续期",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tD",
+          "request_id": "tD-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tD",
+          "request_id": "tD-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tD",
+          "request_id": "tD-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "associate",
+          "tenant": "tD",
+          "request_id": "tD-e12",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 100,
+          "confirmations": [
+            {
+              "tenant": "tD",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tD-e12",
+              "not_before": 1,
+              "not_after": 100,
+              "alg": "HMAC-SHA256",
+              "sig": "b04c1fd38c14a6ef85566c33fc0ab25965464dd2da408ea172fc37be3f23173f"
+            },
+            {
+              "tenant": "tD",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tD-e12",
+              "not_before": 1,
+              "not_after": 100,
+              "alg": "HMAC-SHA256",
+              "sig": "640a1c2edd123d774018d0e9969d633779da47f1ddcf5e9c0fe34587c4727244"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tD",
+          "request_id": "tD-login-1",
+          "tick": 21,
+          "identity_id": "i1"
+        },
+        {
+          "op": "reissue",
+          "tenant": "tD",
+          "request_id": "tD-reissue-i1",
+          "tick": 22,
+          "identity_id": "i1"
+        },
+        {
+          "op": "renew_edge",
+          "tenant": "tD",
+          "request_id": "tD-renew-bad",
+          "tick": 23,
+          "edge_id": "tD-e12",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tD",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tD-renew-bad",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "58001e4bb002d16f984e341dc8e647ee86af1da2e9996b51153af98cac4a2424"
+            },
+            {
+              "tenant": "tD",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tD-renew-bad",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "2d93aba435e012541397d9079604a26fc99d6a5f3aa3b41cd59a3d4d8689a5e8"
+            }
+          ]
+        },
+        {
+          "op": "renew_edge",
+          "tenant": "tD",
+          "request_id": "tD-renew-ok",
+          "tick": 24,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tD",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 2,
+              "peer": "i2",
+              "request_id": "tD-renew-ok",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "af9ec62f45fb4e71a8bdb71864d18283283a188723ec56d52843709fa0417d26"
+            },
+            {
+              "tenant": "tD",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tD-renew-ok",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "f5ab986342a3564a5e2ccc7870552829394ba1f2b96db8cda5e5dfafa623a4bb"
+            }
+          ],
+          "edge_id": "tD-e12"
+        },
+        {
+          "op": "login",
+          "tenant": "tD",
+          "request_id": "tD-login-2",
+          "tick": 25,
+          "identity_id": "i1"
+        }
+      ],
+      "expected": {
+        "i1_final_gen": 2,
+        "bad_renew_status": "STALE_CONFIRMATION",
+        "good_renew_status": "OK",
+        "final_components": [
+          [
+            "i1",
+            "i2"
+          ]
+        ],
+        "login1_valid": false,
+        "login2_valid": true
+      }
+    },
+    {
+      "id": "S5",
+      "name": "expiry_races_new_session_and_replay",
+      "description": "边到期导致分量拆分，新旧登录争用，旧请求只重放历史回执",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tE",
+          "request_id": "tE-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tE",
+          "request_id": "tE-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tE",
+          "request_id": "tE-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "associate",
+          "tenant": "tE",
+          "request_id": "tE-e12",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 10,
+          "not_after": 30,
+          "confirmations": [
+            {
+              "tenant": "tE",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tE-e12",
+              "not_before": 10,
+              "not_after": 30,
+              "alg": "HMAC-SHA256",
+              "sig": "504de3c0251ccaf482c87a4fabee604c5030e43bc842663c86cf9f5b92701531"
+            },
+            {
+              "tenant": "tE",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tE-e12",
+              "not_before": 10,
+              "not_after": 30,
+              "alg": "HMAC-SHA256",
+              "sig": "42936e08b500cc0b4d5cf033176858e93d5239e66a1e923e32968a0206f3ca4b"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tE",
+          "request_id": "tE-login-before",
+          "tick": 25,
+          "identity_id": "i1"
+        },
+        {
+          "op": "login",
+          "tenant": "tE",
+          "request_id": "tE-login-after",
+          "tick": 31,
+          "identity_id": "i2"
+        },
+        {
+          "op": "associate",
+          "tenant": "tE",
+          "request_id": "tE-e12",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 10,
+          "not_after": 30,
+          "confirmations": [
+            {
+              "tenant": "tE",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tE-e12",
+              "not_before": 10,
+              "not_after": 30,
+              "alg": "HMAC-SHA256",
+              "sig": "504de3c0251ccaf482c87a4fabee604c5030e43bc842663c86cf9f5b92701531"
+            },
+            {
+              "tenant": "tE",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tE-e12",
+              "not_before": 10,
+              "not_after": 30,
+              "alg": "HMAC-SHA256",
+              "sig": "42936e08b500cc0b4d5cf033176858e93d5239e66a1e923e32968a0206f3ca4b"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tE",
+          "request_id": "tE-login-before",
+          "tick": 40,
+          "identity_id": "i1"
+        }
+      ],
+      "expected": {
+        "components_at_31": [
+          [
+            "i1"
+          ],
+          [
+            "i2"
+          ]
+        ],
+        "login_before_subject_gen_less_than_login_after": true,
+        "replay_status": "OK",
+        "replay_flag": true,
+        "expired_edge_state": "active"
+      }
+    },
+    {
+      "id": "S6",
+      "name": "process_crash_before_and_after_commit",
+      "description": "独立进程在未提交与已提交未回执两处终止，重启按 ID 重放",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tF",
+          "request_id": "tF-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tF",
+          "request_id": "tF-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tF",
+          "request_id": "tF-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tF",
+          "request_id": "tF-reg-i3",
+          "tick": 12,
+          "identity_id": "i3",
+          "provider": "p3"
+        },
+        {
+          "op": "associate",
+          "tenant": "tF",
+          "request_id": "tF-e12-bc",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tF",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tF-e12-bc",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "adb277613e8805b30115bd80fe6771a1844da67c8b2a49efe974573967620053"
+            },
+            {
+              "tenant": "tF",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "tF-e12-bc",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "742a6b8b1e642dbb6c83192f780771363e985c335219969190e2a981639acc5e"
+            }
+          ],
+          "crash": "before_commit"
+        },
+        {
+          "op": "associate",
+          "tenant": "tF",
+          "request_id": "tF-e23-ac",
+          "tick": 21,
+          "identity_a": "i2",
+          "identity_b": "i3",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tF",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i3",
+              "request_id": "tF-e23-ac",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "45042a107b978b94dbc007b4633e40106870418fcd14103742f6a50d2333c9a9"
+            },
+            {
+              "tenant": "tF",
+              "provider": "p3",
+              "identity": "i3",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "tF-e23-ac",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "8904b8cf48ce0123a98d6b697f0f7dadd3ee6f6832af7c82cc98aaf67bfc2303"
+            }
+          ],
+          "crash": "after_commit"
+        }
+      ],
+      "expected": {
+        "before_commit_request": "tF-e12-bc",
+        "after_commit_request": "tF-e23-ac",
+        "after_replay_components": [
+          [
+            "i1",
+            "i2",
+            "i3"
+          ]
+        ],
+        "before_replay_observed": "before_commit",
+        "after_replay_observed": "after_commit"
+      }
+    },
+    {
+      "id": "S7",
+      "name": "concurrent_associate_reissue_revoke",
+      "description": "确认、续发、撤回在独立进程中并发争用同一批边",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tG",
+          "request_id": "tG-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tG",
+          "request_id": "tG-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tG",
+          "request_id": "tG-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tG",
+          "request_id": "tG-reg-i3",
+          "tick": 12,
+          "identity_id": "i3",
+          "provider": "p3"
+        }
+      ],
+      "concurrent_groups": [
+        [
+          {
+            "op": "associate",
+            "tenant": "tG",
+            "request_id": "tG-e12",
+            "tick": 20,
+            "identity_a": "i1",
+            "identity_b": "i2",
+            "not_before": 1,
+            "not_after": 1000,
+            "confirmations": [
+              {
+                "tenant": "tG",
+                "provider": "p1",
+                "identity": "i1",
+                "identity_gen": 1,
+                "peer": "i2",
+                "request_id": "tG-e12",
+                "not_before": 1,
+                "not_after": 1000,
+                "alg": "HMAC-SHA256",
+                "sig": "849e367119c33d59b10e83667cd89acedecc390a5fc4302acdd90d61013d80ad"
+              },
+              {
+                "tenant": "tG",
+                "provider": "p2",
+                "identity": "i2",
+                "identity_gen": 1,
+                "peer": "i1",
+                "request_id": "tG-e12",
+                "not_before": 1,
+                "not_after": 1000,
+                "alg": "HMAC-SHA256",
+                "sig": "6af5b1cb7b0d10eb9cf5acc525fa74db0d68bec2d307c9b49af34edad162724f"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "op": "reissue",
+            "tenant": "tG",
+            "request_id": "tG-reissue-i2",
+            "tick": 21,
+            "identity_id": "i2"
+          }
+        ],
+        [
+          {
+            "op": "revoke",
+            "tenant": "tG",
+            "request_id": "tG-rev-e12",
+            "tick": 22,
+            "edge_id": "tG-e12"
+          },
+          {
+            "op": "associate",
+            "tenant": "tG",
+            "request_id": "tG-e23",
+            "tick": 23,
+            "identity_a": "i2",
+            "identity_b": "i3",
+            "not_before": 1,
+            "not_after": 1000,
+            "confirmations": [
+              {
+                "tenant": "tG",
+                "provider": "p2",
+                "identity": "i2",
+                "identity_gen": 2,
+                "peer": "i3",
+                "request_id": "tG-e23",
+                "not_before": 1,
+                "not_after": 1000,
+                "alg": "HMAC-SHA256",
+                "sig": "9c34b1d0e908c4b6daf0dfdf215f6ea1f65c195025656a002000efc470e9b3ff"
+              },
+              {
+                "tenant": "tG",
+                "provider": "p3",
+                "identity": "i3",
+                "identity_gen": 1,
+                "peer": "i2",
+                "request_id": "tG-e23",
+                "not_before": 1,
+                "not_after": 1000,
+                "alg": "HMAC-SHA256",
+                "sig": "5ba315ed7468993e457b978623437d94470388ea23af1d37d155090d90d7a52b"
+              }
+            ]
+          }
+        ]
+      ],
+      "expected": {
+        "all_receipts_persisted": true,
+        "no_duplicate_active_edge": true,
+        "receipt_count": 4
+      }
+    },
+    {
+      "id": "S8",
+      "name": "tenant_isolation_same_numbers",
+      "description": "不同租户同身份编号、同请求编号、同主体编号互不干扰",
+      "requests": [
+        {
+          "op": "register_tenant",
+          "tenant": "tX",
+          "request_id": "tX-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tX",
+          "request_id": "tX-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tX",
+          "request_id": "tX-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "associate",
+          "tenant": "tX",
+          "request_id": "shared-rid-edge",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tX",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "shared-rid-edge",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "e3f646634c1ce23e4c72c277f2f8694fa2cdbec1a4006b0eb2351d7f3bce2e52"
+            },
+            {
+              "tenant": "tX",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "shared-rid-edge",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "cc441ae0d9652ccbf26855286305a5f81b9a274c0ef855e8b80d6606ddcbedc3"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tX",
+          "request_id": "shared-rid-login",
+          "tick": 21,
+          "identity_id": "i1"
+        },
+        {
+          "op": "register_tenant",
+          "tenant": "tY",
+          "request_id": "tY-r00",
+          "tick": 1
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tY",
+          "request_id": "tY-reg-i1",
+          "tick": 10,
+          "identity_id": "i1",
+          "provider": "p1"
+        },
+        {
+          "op": "register_identity",
+          "tenant": "tY",
+          "request_id": "tY-reg-i2",
+          "tick": 11,
+          "identity_id": "i2",
+          "provider": "p2"
+        },
+        {
+          "op": "associate",
+          "tenant": "tY",
+          "request_id": "shared-rid-edge",
+          "tick": 20,
+          "identity_a": "i1",
+          "identity_b": "i2",
+          "not_before": 1,
+          "not_after": 1000,
+          "confirmations": [
+            {
+              "tenant": "tY",
+              "provider": "p1",
+              "identity": "i1",
+              "identity_gen": 1,
+              "peer": "i2",
+              "request_id": "shared-rid-edge",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "a4145ba548cc3831c97e9bad494ef6da33a5c7cfd18cf097188375698985645d"
+            },
+            {
+              "tenant": "tY",
+              "provider": "p2",
+              "identity": "i2",
+              "identity_gen": 1,
+              "peer": "i1",
+              "request_id": "shared-rid-edge",
+              "not_before": 1,
+              "not_after": 1000,
+              "alg": "HMAC-SHA256",
+              "sig": "ef66536db14dbadf347ee507229a0439e4db9c7b837cf3e051a42880217a1433"
+            }
+          ]
+        },
+        {
+          "op": "login",
+          "tenant": "tY",
+          "request_id": "shared-rid-login",
+          "tick": 21,
+          "identity_id": "i1"
+        }
+      ],
+      "expected": {
+        "tenants": [
+          "tX",
+          "tY"
+        ],
+        "subject_no_each": "i1",
+        "receipt_rows_per_tenant": 4
+      }
+    }
+  ]
+}
